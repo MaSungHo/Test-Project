@@ -38,9 +38,22 @@ class Page1Page extends React.Component {
   render() {
     return(
     	<div>
-    		{customers.map(c=>{
-    			return <Customer key={c.id} id={c.id} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job} />
-    		})}
+    		<Table>
+    			<TableHead>
+    				<TableRow>
+    					<TableCell>번호</TableCell>
+    					<TableCell>이름</TableCell>
+    					<TableCell>생년월일</TableCell>
+    					<TableCell>성별</TableCell>
+    					<TableCell>직업</TableCell>
+    				</TableRow>
+    			</TableHead>
+    			<TableBody>
+    				{customers.map(c=>{
+    					return <Customer key={c.id} id={c.id} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job} />
+    				})}
+    			</TableBody>
+    		</Table>
     	</div>
     );
   }
